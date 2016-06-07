@@ -4,6 +4,13 @@ var countBy = function(d, b){
   }
 }
 
+var bottles = function(){
+  for(var i = 99; i>0; i --){
+    $(".song").append("<p class='verse'>"+i+" bottles of beer on the wall, "+i+" bottles of beer. Take one down, pass it around, "+ (i-1) +" bottles of beer on the wall.</p>")
+  }
+
+}
+
 $(document).ready(function() {
   $(".countUpBy").submit(function(){
     debugger;
@@ -23,4 +30,13 @@ $(document).ready(function() {
     }
     event.preventDefault();
   });
+
+  $("#bottles").click(function(){
+    bottles();
+    event.preventDefault();
+  });
+  $("#clearBottles").click(function(){
+    $(".verse").remove();
+  });
+
 });
