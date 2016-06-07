@@ -40,6 +40,25 @@ function fact(x) {
   else return x;
 }
 
+var palindrome = function(word){
+  wordArray = word.toLowerCase().split("");
+  console.log(wordArray);
+  var m = 0;
+  for(var i=0; i<wordArray.length*0.5; i++){
+    if (wordArray[i]===wordArray[wordArray.length-i-1]){
+      console.log(wordArray[i] + " " + wordArray[wordArray.length-i-1]);
+      m++;
+    }
+    else{
+    }
+  }
+  if(m===i){
+    alert("It is a palindrome")
+  }
+  else{
+    alert("It is NOT a palindrome")
+  }
+}
 
 
 $(document).ready(function() {
@@ -80,6 +99,12 @@ $(document).ready(function() {
   $(".factorialForm").submit(function(){
     var n = $("#factorialInput").val();
     $(".factOutput").append("<li>"+fact(n)+"</li>");
+    event.preventDefault();
+  });
+
+  $(".palindromeForm").submit(function(){
+    var word = $("#palindromeInput").val();
+    palindrome(word);
     event.preventDefault();
   });
 
