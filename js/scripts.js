@@ -29,10 +29,18 @@ var factorial = function(n){
   var result = 1;
   for(i=5; i>0; i--){
     result *= i;
-    console.log(result);
   }
   return result;
 }
+
+function fact(x) {
+  if (x!=1) {
+    return x*fact(x-1);;
+  }
+  else return x;
+}
+
+
 
 $(document).ready(function() {
   $(".countUpBy").submit(function(){
@@ -71,7 +79,7 @@ $(document).ready(function() {
 
   $(".factorialForm").submit(function(){
     var n = $("#factorialInput").val();
-    $(".factOutput").append("<li>"+factorial(n)+"</li>");
+    $(".factOutput").append("<li>"+fact(n)+"</li>");
     event.preventDefault();
   });
 
