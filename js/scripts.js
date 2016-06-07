@@ -25,6 +25,15 @@ var wordPuzzle = function(stringInput){
   return stringOutput;
 };
 
+var factorial = function(n){
+  var result = 1;
+  for(i=5; i>0; i--){
+    result *= i;
+    console.log(result);
+  }
+  return result;
+}
+
 $(document).ready(function() {
   $(".countUpBy").submit(function(){
     debugger;
@@ -58,6 +67,12 @@ $(document).ready(function() {
     var originalString = $("#stringInput").val();
     event.preventDefault();
     $("#puzzle").append("<li>"+wordPuzzle(stringInput)+"</li>");
+  });
+
+  $(".factorialForm").submit(function(){
+    var n = $("#factorialInput").val();
+    $(".factOutput").append("<li>"+factorial(n)+"</li>");
+    event.preventDefault();
   });
 
 });
