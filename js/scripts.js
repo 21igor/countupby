@@ -60,6 +60,22 @@ var palindrome = function(word){
   }
 }
 
+var primesTo = function(n){
+  var numArray = [];
+  for(i=1; i<=n; i++){
+    numArray.push(i);
+  }
+  for(prime=2; prime<=9; prime++){
+    for(i=0; i<=n; i++){
+      if(numArray[i] % prime === 0 && numArray[i] != prime){
+        numArray.splice(i,1);
+      }
+      else{
+      }
+    }
+  }
+  console.log(numArray)
+}
 
 $(document).ready(function() {
   $(".countUpBy").submit(function(){
@@ -105,6 +121,12 @@ $(document).ready(function() {
   $(".palindromeForm").submit(function(){
     var word = $("#palindromeInput").val();
     palindrome(word);
+    event.preventDefault();
+  });
+
+  $(".primeForm").submit(function(){
+    var n = $("#nInput").val();
+    primesTo(n);
     event.preventDefault();
   });
 
